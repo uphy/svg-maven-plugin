@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>jp.uphy.maven</groupId>
+    <artifactId>svg-maven-plugin-sample</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>jp.uphy.maven</groupId>
+                <artifactId>svg-maven-plugin</artifactId>
+                <version>1.0-SNAPSHOT</version>
+                <executions>
+                    <execution>
+                        <id>Rasterize</id>
+                        <goals>
+                            <goal>rasterize</goal>
+                        </goals>
+                        <configuration>
+                            <input>svg/sample.svg</input>
+                            <outputs>
+                                <output>
+                                    <path>output/sample128.png</path>
+                                    <width>128</width>
+                                    <height>128</height>
+                                    <format>png</format>
+                                </output>
+                                <output>
+                                    <path>output/sample256.pdf</path>
+                                    <width>256</width>
+                                    <height>256</height>
+                                    <format>pdf</format>
+                                </output>
+                            </outputs>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>Rasterize - Batch</id>
+                        <goals>
+                            <goal>rasterize-batch</goal>
+                        </goals>
+                        <configuration>
+                            <inputDirectory>svg/forBatch</inputDirectory>
+                            <format>png</format>
+                            <outputDirectory>output/batch</outputDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>Android Drawables</id>
+                        <goals>
+                            <goal>rasterize-android</goal>
+                        </goals>
+                        <configuration>
+                            <input>svg/sample.svg</input>
+                            <width>128</width>
+                            <height>128</height>
+                            <resDirectory>output/android/res</resDirectory>
+                            <resolutions>
+                                <resolution>LDPI</resolution>
+                                <resolution>MDPI</resolution>
+                                <resolution>HDPI</resolution>
+                                <resolution>XHDPI</resolution>
+                                <resolution>XXHDPI</resolution>
+                            </resolutions>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>Android Drawables - Batch</id>
+                        <goals>
+                            <goal>rasterize-android-batch</goal>
+                        </goals>
+                        <configuration>
+                            <inputDirectory>svg/forBatch</inputDirectory>
+                            <format>png</format>
+                            <resDirectory>output/android/batch/res</resDirectory>
+                            <resolutions>
+                                <resolution>LDPI</resolution>
+                                <resolution>MDPI</resolution>
+                                <resolution>HDPI</resolution>
+                                <resolution>XHDPI</resolution>
+                                <resolution>XXHDPI</resolution>
+                            </resolutions>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
