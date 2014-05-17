@@ -11,7 +11,7 @@ Also supports converting to multiple resolutions for Android.
 Edit your pom.xml as follows.
 See also example [pom.xml](https://github.com/uphy/svg-maven-plugin/blob/develop/sample/pom.xml).
 
-1. Add plugin repository.
+1.Add plugin repository.
 
 ```xml
 <pluginRepositories>
@@ -22,7 +22,7 @@ See also example [pom.xml](https://github.com/uphy/svg-maven-plugin/blob/develop
 </pluginRepositories>
 ```
 
-2. Add plugin.
+2.Add plugin.
 
 ```xml
 <plugin>
