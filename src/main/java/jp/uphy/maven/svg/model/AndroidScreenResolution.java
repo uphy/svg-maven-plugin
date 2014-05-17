@@ -23,7 +23,7 @@ public enum AndroidScreenResolution {
     XHDPI(2),
     XXHDPI(3);
 
-    private double scale;
+    private final double scale;
 
     private AndroidScreenResolution(double scale) {
         this.scale = scale;

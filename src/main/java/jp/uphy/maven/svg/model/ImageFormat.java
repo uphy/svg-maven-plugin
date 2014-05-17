@@ -32,7 +32,7 @@ public enum ImageFormat {
     private final DestinationType destinationType;
     private final String[] extensions;
 
-    ImageFormat(DestinationType type, String... extensions) {
+    private ImageFormat(DestinationType type, String... extensions) {
         this.destinationType = type;
         this.extensions = extensions;
     }

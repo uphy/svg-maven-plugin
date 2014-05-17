@@ -61,6 +61,7 @@ public class RasterizeMojo extends AbstractRasterizeMojo {
     }
 
     public static class Output {
+
         @Parameter(required = true)
         File path;
         @Parameter(required = true)

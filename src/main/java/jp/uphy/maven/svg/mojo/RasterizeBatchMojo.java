@@ -24,9 +24,6 @@ import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 
 import java.io.File;
-import java.text.MessageFormat;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 
 /**
@@ -52,7 +49,7 @@ public class RasterizeBatchMojo extends AbstractRasterizeMojo {
     private File outputDirectory;
 
     @Override
-    protected void initialize() throws MojoExecutionException, MojoFailureException {
+    protected void initialize() throws MojoFailureException {
         assertIsExistingDirectory("inputDirectory", inputDirectory);
         createDirectory("outputDirectory", outputDirectory);
         for (File input : inputDirectory.listFiles()) {

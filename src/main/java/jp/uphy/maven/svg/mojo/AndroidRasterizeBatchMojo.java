@@ -63,7 +63,7 @@ public class AndroidRasterizeBatchMojo extends AbstractRasterizeMojo {
     private List<String> resolutions;
 
     @Override
-    protected void initialize() throws MojoExecutionException, MojoFailureException {
+    protected void initialize() throws MojoFailureException {
         assertIsExistingDirectory("inputDirectory", inputDirectory);
         createDirectory("outputDirectory", resDirectory);
         for (File input : inputDirectory.listFiles()) {
@@ -79,6 +79,7 @@ public class AndroidRasterizeBatchMojo extends AbstractRasterizeMojo {
     }
 
     public static class Output {
+
         @Parameter(required = true)
         File path;
         @Parameter(required = true)
