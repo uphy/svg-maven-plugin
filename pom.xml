@@ -107,10 +107,10 @@
                     <noJekyll>true</noJekyll>
                     <outputDirectory>${localrepo.outputDirectory}</outputDirectory>
                     <branch>${github.branch}</branch>
+                    <merge>true</merge>
                     <includes>
                         <include>**/*</include>
                     </includes>
-                    <merge>true</merge>
                     <repositoryName>${github.repoName}</repositoryName>
                     <repositoryOwner>${github.global.userName}</repositoryOwner>
                 </configuration>
