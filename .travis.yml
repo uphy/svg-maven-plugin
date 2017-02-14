@@ -1,0 +1,11 @@
+language: java
+jdk:
+  - oraclejdk7
+
+install: true
+script: ./travis.sh
+
+cache:
+  directories:
+  - $HOME/.m2/repository
+  - $HOME/.m2/wrapper
