@@ -3,13 +3,30 @@
     <groupId>jp.uphy.maven</groupId>
     <artifactId>svg-maven-plugin</artifactId>
     <packaging>maven-plugin</packaging>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
     <name>SVG Maven plugin</name>
 
     <scm>
-        <connection>scm:git:http://ishikura@uphy.jp/git/git/~ishikura/svg-maven-plugin.git</connection>
-        <tag>1.0</tag>
+        <connection>scm:https://github.com/uphy/svg-maven-plugin.git</connection>
+        <tag>HEAD</tag>
     </scm>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
+    </licenses>
+
+    <properties>
+        <github.global.userName/>
+        <github.global.password/>
+        <github.repoName>svg-maven-plugin</github.repoName>
+        <localrepo.outputDirectory>${project.build.directory}/mvn-repo</localrepo.outputDirectory>
+        <github.branch>refs/heads/mvn-repo</github.branch>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -34,6 +51,14 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>internal.repo</id>
+            <name>Temporary Staging Repository</name>
+            <url>file://${localrepo.outputDirectory}</url>
+        </repository>
+    </distributionManagement>
 
     <build>
         <plugins>
@@ -66,15 +91,39 @@
                 <artifactId>maven-jgitflow-plugin</artifactId>
                 <version>1.0-alpha9</version>
             </plugin>
+            <plugin>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.8.1</version>
+                <configuration>
+                    <altDeploymentRepository>internal.repo::default::file://${localrepo.outputDirectory}</altDeploymentRepository>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.github.github</groupId>
+                <artifactId>site-maven-plugin</artifactId>
+                <version>0.12</version>
+                <configuration>
+                    <message>Maven artifacts for ${project.version}</message>
+                    <noJekyll>true</noJekyll>
+                    <outputDirectory>${localrepo.outputDirectory}</outputDirectory>
+                    <branch>${github.branch}</branch>
+                    <merge>true</merge>
+                    <includes>
+                        <include>**/*</include>
+                    </includes>
+                    <repositoryName>${github.repoName}</repositoryName>
+                    <repositoryOwner>${github.global.userName}</repositoryOwner>
+                </configuration>
+                <executions>
+                    <!-- run site-maven-plugin's 'site' target as part of the build's normal 'deploy' phase -->
+                    <execution>
+                        <goals>
+                            <goal>site</goal>
+                        </goals>
+                        <phase>deploy</phase>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
-
-    <distributionManagement>
-        <repository>
-            <id>uphyjp-plugin</id>
-            <name>uphy.jp - Plugins</name>
-            <url>http://uphy.jp/nexus/content/repositories/plugins/</url>
-        </repository>
-    </distributionManagement>
-
 </project>

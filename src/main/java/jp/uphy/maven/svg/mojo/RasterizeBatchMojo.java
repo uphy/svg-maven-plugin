@@ -1,13 +1,11 @@
-package jp.uphy.maven.svg.mojo;
-
-/*
- * Copyright 2001-2005 The Apache Software Foundation.
+/**
+ * Copyright (C) 2014 uphy.jp
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *         http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,6 +13,7 @@ package jp.uphy.maven.svg.mojo;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package jp.uphy.maven.svg.mojo;
 
 import jp.uphy.maven.svg.model.FilenameWithSize;
 import jp.uphy.maven.svg.model.ImageFormat;
@@ -25,9 +24,6 @@ import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 
 import java.io.File;
-import java.text.MessageFormat;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 
 /**
@@ -53,7 +49,7 @@ public class RasterizeBatchMojo extends AbstractRasterizeMojo {
     private File outputDirectory;
 
     @Override
-    protected void initialize() throws MojoExecutionException, MojoFailureException {
+    protected void initialize() throws MojoFailureException {
         assertIsExistingDirectory("inputDirectory", inputDirectory);
         createDirectory("outputDirectory", outputDirectory);
         for (File input : inputDirectory.listFiles()) {

@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2013 uphy.jp
+ * Copyright (C) 2014 uphy.jp
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ public enum ImageFormat {
     private final DestinationType destinationType;
     private final String[] extensions;
 
-    ImageFormat(DestinationType type, String... extensions) {
+    private ImageFormat(DestinationType type, String... extensions) {
         this.destinationType = type;
         this.extensions = extensions;
     }

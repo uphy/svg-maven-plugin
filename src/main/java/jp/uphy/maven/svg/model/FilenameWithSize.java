@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2013 uphy.jp
+ * Copyright (C) 2014 uphy.jp
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,8 +15,6 @@
  */
 package jp.uphy.maven.svg.model;
 
-import org.apache.maven.plugin.MojoFailureException;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -26,10 +24,10 @@ import java.util.regex.Pattern;
  */
 public class FilenameWithSize {
 
-    private String name;
-    private int width;
-    private int height;
-    private String extension;
+    private final String name;
+    private final int width;
+    private final int height;
+    private final String extension;
 
     private FilenameWithSize(String name, int width, int height, String extension) {
         this.name = name;
