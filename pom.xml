@@ -21,8 +21,8 @@
     </licenses>
 
     <properties>
-        <github.global.userName/>
-        <github.global.password/>
+        <github.global.userName />
+        <github.global.password />
         <github.repoName>svg-maven-plugin</github.repoName>
         <localrepo.outputDirectory>${project.build.directory}/mvn-repo</localrepo.outputDirectory>
         <github.branch>refs/heads/mvn-repo</github.branch>
