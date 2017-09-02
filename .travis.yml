@@ -18,3 +18,8 @@ deploy:
     tags: true
   file:
     - "./target/svg-maven-plugin-$TRAVIS_TAG.jar"
+
+branches:
+  only:
+  - master
+  - develop
