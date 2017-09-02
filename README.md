@@ -1,4 +1,4 @@
-# svg-maven-plugin
+# svg-maven-plugin [![Build Status](https://travis-ci.org/uphy/svg-maven-plugin.svg?branch=develop)](https://travis-ci.org/uphy/svg-maven-plugin)
 
 ## Summary
 

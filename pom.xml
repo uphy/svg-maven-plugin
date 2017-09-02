@@ -7,7 +7,7 @@
     <name>SVG Maven plugin</name>
 
     <scm>
-        <connection>scm:https://github.com/Argelbargel/svg-maven-plugin.git</connection>
+        <connection>scm:https://github.com/uphy/svg-maven-plugin.git</connection>
         <tag>HEAD</tag>
     </scm>
 
