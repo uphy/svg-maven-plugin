@@ -16,8 +16,8 @@ See also example [pom.xml](https://github.com/uphy/svg-maven-plugin/blob/develop
 ```xml
 <pluginRepositories>
     <pluginRepository>
-        <id>uphy.jp - Plugins</id>
-        <url>http://uphy.jp/nexus/content/repositories/plugins/</url>
+        <id>svg-maven-plugin-repository</id>
+        <url>https://raw.github.com/uphy/svg-maven-plugin/mvn-repo/</url>
     </pluginRepository>
 </pluginRepositories>
 ```
