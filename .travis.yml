@@ -1,6 +1,6 @@
 language: java
 jdk:
-  - oraclejdk7
+  - openjdk7
 
 install: true
 script: ./travis.sh
