@@ -3,7 +3,7 @@
     <groupId>jp.uphy.maven</groupId>
     <artifactId>svg-maven-plugin</artifactId>
     <packaging>maven-plugin</packaging>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.1</version>
     <name>SVG Maven plugin</name>
 
     <scm>
@@ -21,8 +21,8 @@
     </licenses>
 
     <properties>
-        <github.global.userName/>
-        <github.global.password/>
+        <github.global.userName />
+        <github.global.password />
         <github.repoName>svg-maven-plugin</github.repoName>
         <localrepo.outputDirectory>${project.build.directory}/mvn-repo</localrepo.outputDirectory>
         <github.branch>refs/heads/mvn-repo</github.branch>
@@ -65,7 +65,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-plugin-plugin</artifactId>
-                <version>3.2</version>
+                <version>3.5</version>
                 <configuration>
                     <goalPrefix>svg</goalPrefix>
                 </configuration>
@@ -87,9 +87,12 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>com.atlassian.maven.plugins</groupId>
-                <artifactId>maven-jgitflow-plugin</artifactId>
-                <version>1.0-alpha9</version>
+                <groupId>external.atlassian.jgitflow</groupId>
+                <artifactId>jgitflow-maven-plugin</artifactId>
+                <version>1.0-m5.1</version>
+                <configuration>
+                    <noDeploy>true</noDeploy>
+                </configuration>
             </plugin>
             <plugin>
                 <artifactId>maven-deploy-plugin</artifactId>
