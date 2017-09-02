@@ -3,7 +3,7 @@
     <groupId>jp.uphy.maven</groupId>
     <artifactId>svg-maven-plugin</artifactId>
     <packaging>maven-plugin</packaging>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.2-SNAPSHOT</version>
     <name>SVG Maven plugin</name>
 
     <scm>
@@ -21,8 +21,8 @@
     </licenses>
 
     <properties>
-        <github.global.userName/>
-        <github.global.password/>
+        <github.global.userName />
+        <github.global.password />
         <github.repoName>svg-maven-plugin</github.repoName>
         <localrepo.outputDirectory>${project.build.directory}/mvn-repo</localrepo.outputDirectory>
         <github.branch>refs/heads/mvn-repo</github.branch>
