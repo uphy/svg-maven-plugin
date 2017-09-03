@@ -28,7 +28,7 @@ See also example [pom.xml](https://github.com/uphy/svg-maven-plugin/blob/develop
 <plugin>
     <groupId>jp.uphy.maven</groupId>
     <artifactId>svg-maven-plugin</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     <executions>
         <execution>
             <id>Rasterize</id>
